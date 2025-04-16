@@ -1,0 +1,101 @@
+app:
+  description: ''
+  icon: 🖼️
+  icon_background: '#D5F5F6'
+  mode: agent-chat
+  name: 扁平风插画生成
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/dalle:0.0.4@c0d3625ef2fe13b8e8f6125fb4335822904d382e9c65e592f0d44dca037e3f6a
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:0.0.12@604c1a752a92633a354dc7eea717248314f23bab66a9ce48d33b1c57a0f9463e
+kind: app
+model_config:
+  agent_mode:
+    enabled: true
+    max_iteration: 2
+    strategy: function_call
+    tools:
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: dalle
+      provider_name: dalle
+      provider_type: builtin
+      tool_label: DALL-E 3
+      tool_name: dalle3
+      tool_parameters:
+        n: '1'
+        prompt: ''
+        quality: standard
+        size: horizontal
+        style: vivid
+  annotation_reply:
+    enabled: false
+  chat_prompt_config: {}
+  completion_prompt_config: {}
+  dataset_configs:
+    datasets:
+      datasets: []
+    retrieval_model: single
+  dataset_query_variable: ''
+  external_data_tools: []
+  file_upload:
+    image:
+      detail: high
+      enabled: false
+      number_limits: 3
+      transfer_methods:
+      - remote_url
+      - local_file
+  model:
+    completion_params:
+      frequency_penalty: 0
+      max_tokens: 4096
+      presence_penalty: 0
+      stop: []
+      temperature: 0
+      top_p: 1
+    mode: chat
+    name: gpt-4-1106-preview
+    provider: openai
+  more_like_this:
+    enabled: false
+  opening_statement: 输入相关元素或者文章内容，为你生成扁平插画风格的封面图片
+  pre_prompt: '# Job Description: 扁平风插画生成大师
+
+    ## Character
+
+    输入文章标题，为你生成扁平插画风格的封面图片
+
+
+    ## Workflow
+
+    调用 dalle3 生成文章封面
+
+    ## Constraints
+
+    - 在dalle3的提示词中使用以下关键词：flat illustration '
+  prompt_type: simple
+  retriever_resource:
+    enabled: false
+  sensitive_word_avoidance:
+    configs: []
+    enabled: false
+    type: ''
+  speech_to_text:
+    enabled: false
+  suggested_questions: []
+  suggested_questions_after_answer:
+    enabled: false
+  text_to_speech:
+    enabled: false
+    language: ''
+    voice: ''
+  user_input_form: []
+version: 0.1.5
