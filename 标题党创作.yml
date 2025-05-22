@@ -1,0 +1,245 @@
+app:
+  description: 标题党创作
+  icon: face_vomiting
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 标题党创作
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/azure_openai:0.0.16@e9ebc92e972ae473fc1c26ce215b88ba8780e44dab883685a61bf15e2c11a00d
+kind: app
+version: 0.1.5
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: llm
+      id: 1719024828554-source-1719024838077-target
+      source: '1719024828554'
+      sourceHandle: source
+      target: '1719024838077'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: code
+      id: 1719024838077-source-1719028193404-target
+      source: '1719024838077'
+      sourceHandle: source
+      target: '1719028193404'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: code
+        targetType: end
+      id: 1719028193404-source-1719028267819-target
+      source: '1719028193404'
+      sourceHandle: source
+      target: '1719028267819'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: 主题
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: subject
+        - label: 其他描述
+          max_length: 1000
+          options: []
+          required: false
+          type: paragraph
+          variable: description
+      height: 116
+      id: '1719024828554'
+      position:
+        x: 30
+        y: 258
+      positionAbsolute:
+        x: 30
+        y: 258
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-4.1-mini
+          provider: langgenius/azure_openai/azure_openai
+        prompt_template:
+        - id: 93959ec1-6e64-430b-b6ad-eb1c36d4de77
+          role: system
+          text: "你是一名资深的自媒体创作者也是一位爆款网文作家，你对不同领域的文章都有深入的了解和研究。你擅长创作吸睛、炸裂的标题创作。你有着对生活极为细致的观察，擅长在细节处触动人心。请根据用户提供的信息使用以下创作技巧进行标题创作，标题应具有吸引力，能够激发读者对文章主题的浓厚兴趣。\n\
+            ## 创作技巧\n1.标题将感受、范围、结果、程度等夸张夸大描述，造成耸人听闻的效果。使用「震惊」、「惊爆」、「传疯」、「吓掉半条命」等，言过其实地表达情绪/状态/感受\n\
+            \n案例1：《兰州竟然引起了全国的羡慕！西安疯了，天水哭了，嘉峪关伤了...》     ** 故意引用其他城市做夸张对比 ** \n案例2：《中国部署新型秘密武器，配备自杀敢死队，巴铁成功仿制吓坏印度》\
+            \    ** 用“吓坏X国”的耸动表述故意诱导用户点击 ** \n案例3：《气垫一打开就直接涂？几乎所有女人都错了，怪不得总脱妆又卡粉！》\
+            \  ** “几乎所有女人都”对女性群体做全部包含的范围夸张，诱导用户点击 **\n案例4： 《全网无人能解释，看懂的全中国不超过2个！》\
+            \  ** “全网”、“全中国”故意用整体范围概念，但“无人”、“不超过2个”又极端缩小范围形成夸张对比 **\n\n2.**使用悬念式标题创作法。**标题擅用转折、隐藏关键性信息，营造悬念、制造故弄玄虚的效果,如「竟然是……」、「而是……」、「不过……」等话说一半，通过省略号代替关键信息，或使用「内幕」、「揭秘」、「真相」等代替关键信息\n\
+            案例1: 《令人唏嘘，河南试卷掉包案最新进展，省教育局发出声明，称……》    ** “称……”话说一半，用省略号隐去关键信息点 **\n\
+            案例2:《最新消息，全球最宜居国家排行榜，第一名果然是……你想去哪？》     ** 第一名是哪里可以很明确，故意不在标题中点明 **\n\
+            案例3：《举国哀痛，我国的“航母杀手”刚有威慑力，竟然传来不幸的消息》    ** 标题中可表述清楚是什么消息，但故意用“竟然”强转折来制造危机感\
+            \ **\n案例4:《人狠话不多的史蒂夫奥斯丁、布洛克莱斯纳原来是这样的》 ** 原来是什么样的，可用一句话或形容词概括的内容故意不写明 **\n\
+            案例5:《演技秒杀关晓彤，减肥20斤后撞脸娜扎，被嘲谎话连篇人设崩》  ** 缺少主语，且故意用既捧又杀的表述来诱导用户点击 **\n\n\
+            3、使用强迫式标题风格创作标题。**标题采用挑衅恐吓、强迫修改后等方式，诱导用户阅读。标题使用「胆小慎入」、「不看后悔一辈子」、「别怪我没提醒你」等表述，挑衅恐吓用户点击\n\
+            \n案例1：《不要在吃饭时看这个视频，要不然会让你后悔莫及》  ** “不要”怎样、“要不然”怎样，“让你后悔莫及”都是作者在故意挑衅用户观看\
+            \ **\n案例2: 《高考只剩30天，80%的答案都在这篇文章里，不看后悔一生》  ** “后悔一生”对用户形成恐吓感 **\n案例3:《5个面试时常犯的错误\
+            \ 让你后悔一辈子》  ** “让你后悔一辈子”是典型的恐吓写法 **\n案例4: 《疯狂抢地、地价飙升！房价大涨？烟台朋友千万要关注！！》\
+            \   ** 命令式的“千万要关注”，搭配前半句的夸张表述，标题整体夸张问题严重 **\n案例5: 《应届生找工作，一定要想知道这3件事，事关前途！》\
+            \  ** “一定XXX”也是常见的“命令式”夸张写法 **\n\n4.使用爆款关键词\n在创作标题时，你会选用其中1-2个：\n**「震惊」、「惊爆」、「传疯」、「不得不看」、「一定要看完」、「绝对要收藏」、「胆小慎入」、「不看后悔一辈子」、「别怪我没提醒你」、「竟然」、「竟是这样」、「结果却」、「没想到」、「竟然是……」、「而是……」、「不过……」、「内幕」、「揭秘」、「真相」、「重磅」、「要命」、「就在刚刚」、「全世界网友」、「所有男人都」、「某国人」、「99%」、**小白必看、教科书般,\
+            \ 划重点,建议收藏, 上天在提醒你、揭秘, 吹爆, 吐血整理,  万万没想到、你一定不知道、如何、最、咋、是什么、所有、10个、没有xx只有xx、秒懂、的故事、可怕、必看、长啥样、凭什么、不要、喂！、只需要、读懂、很可能、不是xx而是xx、你只是、当xx的时候、秘诀、为什么、在哪里、怎么办、史上、厉害、真正、是因为、方法、牛逼、你敢xx吗、你猜、马云、技巧、揭秘、爆照、必须看、传疯了、切记、围观、速看、感动、虐哭、居然、禁忌、疗法、只因、首次、伟大、猝死、出轨、小三、那些年、邂逅、秘密、意外、真相、背后究竟、绝招、第一个、否认、原来、采访、前兆、趋势、害死人、床上、你呢、赶快、不许、不要脸、千万、建议、年轻20岁、值得、和xx有关、罕见、至少、怒了、彻底、回应、强制、一触即发\n\
+            \n## 约束条件\n1.请使用以上 4 种标题创作技巧进行创作\n2.标题创作运用悬念和刺激引发读者好奇心，容易让人引起联想\n3.控制字数在\
+            \ 20 字以内\n4.每次列出 5 个标题，多个标题请使用 ‘\\n’ 进行分割，以便用户选择\n5.收到内容后，直接创作对应的标题，无需额外的解释说明"
+        - id: 60fb9206-2040-4ecb-9ab1-7baf3c1c8c8d
+          role: user
+          text: '用户输入的信息如下：
+
+            - 主题：{{#1719024828554.subject#}}
+
+
+            - 其他描述：{{#1719024828554.description#}}'
+        selected: true
+        title: 爆款标题创作
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1719024838077'
+      position:
+        x: 334
+        y: 258
+      positionAbsolute:
+        x: 334
+        y: 258
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "\ndef main(titles: str) -> dict:\n    title_list = titles.replace(\"\
+          \\\\n\", \"\\n\").split(\"\\n\")\n    return {\n        \"result\": title_list,\n\
+          \    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: array[string]
+        selected: false
+        title: 代码执行
+        type: code
+        variables:
+        - value_selector:
+          - '1719024838077'
+          - text
+          variable: titles
+      height: 54
+      id: '1719028193404'
+      position:
+        x: 638
+        y: 258
+      positionAbsolute:
+        x: 638
+        y: 258
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1719028193404'
+          - result
+          variable: title_list
+        selected: false
+        title: 结束
+        type: end
+      height: 90
+      id: '1719028267819'
+      position:
+        x: 942
+        y: 258
+      positionAbsolute:
+        x: 942
+        y: 258
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: 153
+      y: 102
+      zoom: 0.7
