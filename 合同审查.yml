@@ -1,0 +1,285 @@
+app:
+  description: 通过上传合同及合同审批清单，为您快速审查合同中的漏洞疑点。
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 合同审查
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/azure_openai:0.0.16@e9ebc92e972ae473fc1c26ce215b88ba8780e44dab883685a61bf15e2c11a00d
+kind: app
+version: 0.1.5
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 1744952319644-source-1744952322520-target
+      source: '1744952319644'
+      sourceHandle: source
+      target: '1744952322520'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1744952305926-source-1744954021058-target
+      source: '1744952305926'
+      sourceHandle: source
+      target: '1744954021058'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: document-extractor
+      id: 1744952305926-source-1744954024563-target
+      source: '1744952305926'
+      sourceHandle: source
+      target: '1744954024563'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1744954021058-source-1744952319644-target
+      source: '1744954021058'
+      sourceHandle: source
+      target: '1744952319644'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1744954024563-source-1744952319644-target
+      source: '1744954024563'
+      sourceHandle: source
+      target: '1744952319644'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - allowed_file_extensions:
+          - .doc
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: 上传合同原文
+          max_length: 48
+          options: []
+          required: true
+          type: file
+          variable: schtmb
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: 上传合同审批清单
+          max_length: 48
+          options: []
+          required: true
+          type: file
+          variable: schtqd
+        - label: 请输入合同名称
+          max_length: 100
+          options: []
+          required: true
+          type: text-input
+          variable: htmc
+      height: 142
+      id: '1744952305926'
+      position:
+        x: 82.33350389818753
+        y: 282
+      positionAbsolute:
+        x: 82.33350389818753
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1744952313292'
+          - result
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-4.1-mini
+          provider: langgenius/azure_openai/azure_openai
+        prompt_template:
+        - id: 039d27b2-bf6b-45a8-ac05-3233376ce027
+          role: system
+          text: "##角色\n你是公司法务专家，请根据里的检查项目，对合同内容进行评审。\n##任务\n请严格按照检查{{#1744952305926.schtqd#}}清单，逐项评估合规程度，并对每一项进行评分，最后对合同整体进行评分合计，并进行总结。输出内容格式如下：\n\
+            \ \n合同名称：{{#1744952305926.htmc#}}\n检查项目\n1，不符合项原文\n不符合原因说明\n2，不符合项原文\n\
+            不符合项说明\n。。。\n\n请按照合同原文{{#1744952305926.schtmb#}}和合同审查清单{{#1744952305926.schtqd#}}严格比对\n\
+            \n1.合同主体:需要确认合同对方的身份和资格，包括公司名称、注册地址、法定代表人、营业执照等是否真实有效，是否具备签订合同的合法资格\n\
+            2.合同内容:需要仔细审查合同条款，包括合同标的、数量、质量、价格、付款方式、履行方式、违约责任等是否明确、具体、合法、合理，是否存在不公平、不合法的条款。\n\
+            3.合同形式:需要确认合同是否符合法律规定的形式，如是否需要公证、是否需要加盖公章等。\n4.合同订立程序:需要确认合同的订立过程是否合法，如是否经过了招投标签约程序、是否经过了审批程序等。\n\
+            5.合同履行:需要确认合同履行过程中是否存在风险，如是否存在违约行为是否存在纠纷等。\n6.合同附件:需要确认合同附件是否合法、完整、有效，如技术协议、保密协议等是否齐全\n\
+            7.合同语言:需要确认合同语言是否清晰、准确、无歧义，是否符合法律法规的规定。\n\n检查项评分及修改意见\n合同总结\n合同评审总分及整体评估意见总结\n\
+            \n请自认语言格式输出结果，不要出现乱码和无用的符号。"
+        selected: false
+        title: 合同审查
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1744952319644'
+      position:
+        x: 688
+        y: 282
+      positionAbsolute:
+        x: 688
+        y: 282
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1744952319644'
+          - text
+          variable: htsc
+        selected: false
+        title: 结束
+        type: end
+      height: 90
+      id: '1744952322520'
+      position:
+        x: 992
+        y: 282
+      positionAbsolute:
+        x: 992
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_array_file: false
+        selected: false
+        title: 合同内容提取器
+        type: document-extractor
+        variable_selector:
+        - '1744952305926'
+        - schtmb
+      height: 92
+      id: '1744954021058'
+      position:
+        x: 384
+        y: 282
+      positionAbsolute:
+        x: 384
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_array_file: false
+        selected: false
+        title: 审查清单提取器
+        type: document-extractor
+        variable_selector:
+        - '1744952305926'
+        - schtqd
+      height: 92
+      id: '1744954024563'
+      position:
+        x: 384
+        y: 375
+      positionAbsolute:
+        x: 384
+        y: 375
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -521.7933275118835
+      y: 78.8299658021671
+      zoom: 0.8705505632961251

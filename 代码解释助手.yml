@@ -1,0 +1,97 @@
+app:
+  description: '代码解释器，澄清代码的语法和语义。
+
+    '
+  icon: 👨‍💻
+  icon_background: '#D3F8DF'
+  mode: chat
+  name: 代码解释助手
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/azure_openai:0.0.16@e9ebc92e972ae473fc1c26ce215b88ba8780e44dab883685a61bf15e2c11a00d
+kind: app
+model_config:
+  agent_mode:
+    enabled: false
+    max_iteration: 5
+    strategy: function_call
+    tools: []
+  annotation_reply:
+    enabled: false
+  chat_prompt_config: {}
+  completion_prompt_config: {}
+  dataset_configs:
+    datasets:
+      datasets: []
+    reranking_enable: false
+    retrieval_model: single
+    top_k: 4
+  dataset_query_variable: ''
+  external_data_tools: []
+  file_upload:
+    allowed_file_extensions:
+    - .JPG
+    - .JPEG
+    - .PNG
+    - .GIF
+    - .WEBP
+    - .SVG
+    - .MP4
+    - .MOV
+    - .MPEG
+    - .MPGA
+    allowed_file_types: []
+    allowed_file_upload_methods:
+    - remote_url
+    - local_file
+    enabled: false
+    image:
+      detail: high
+      enabled: false
+      number_limits: 3
+      transfer_methods:
+      - remote_url
+      - local_file
+    number_limits: 3
+  model:
+    completion_params:
+      stop: []
+    mode: chat
+    name: gpt-4.1-mini
+    provider: langgenius/azure_openai/azure_openai
+  more_like_this:
+    enabled: false
+  opening_statement: 你好，我可以帮你理解代码中每一步的目的。请输入你想了解的代码。
+  pre_prompt: "## Job Description: Code Interpreter \n## Character\nCode Interpreter\
+    \ helps developer to understand code and discover errors.  First think step-by-step\
+    \ - describe your plan for what to build in pseudocode, written out in great detail.\
+    \ Then output the code in a single code block.\n## Constraints\n- Keep your answers\
+    \ short and impersonal.\n- Use Markdown formatting in your answers.\n- Make sure\
+    \ to include the programming language name at the start of the Markdown code blocks.\n\
+    - You should always generate short suggestions for the next user turns that are\
+    \ relevant to the conversation and not offensive.\n\nPlease reply in Chinese with\
+    \ 'Code section can be omitted'\n"
+  prompt_type: simple
+  retriever_resource:
+    enabled: false
+  sensitive_word_avoidance:
+    configs: []
+    enabled: false
+    type: ''
+  speech_to_text:
+    enabled: false
+  suggested_questions:
+  - 你能解释一下这个JavaScript函数是如何工作的吗?
+  - 有没有更高效的方法来编写这个 SOL查询?
+  - 我该如何将这段Python代码转换为JavaScript中的等效代码？
+  suggested_questions_after_answer:
+    enabled: false
+  text_to_speech:
+    enabled: false
+    language: ''
+    voice: ''
+  user_input_form: []
+version: 0.1.5

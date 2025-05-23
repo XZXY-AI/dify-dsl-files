@@ -1,0 +1,182 @@
+app:
+  description: 欢迎来到您的个性化投资分析助手服务，我们将深入研究股票分析的深度，为您提供全面的见解。
+  icon: 🤑
+  icon_background: '#E4FBCC'
+  mode: agent-chat
+  name: 投资分析报告智能体
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/azure_openai:0.0.16@e9ebc92e972ae473fc1c26ce215b88ba8780e44dab883685a61bf15e2c11a00d
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/yahoo:0.0.4@251cb9671af71cde1acdb921b9d2dbe1225986e3da7cc29c9470c24be7f7c885
+kind: app
+model_config:
+  agent_mode:
+    enabled: true
+    max_iteration: 5
+    strategy: function_call
+    tools:
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: langgenius/yahoo/yahoo
+      provider_name: langgenius/yahoo/yahoo
+      provider_type: builtin
+      tool_label: Analytics
+      tool_name: yahoo_finance_analytics
+      tool_parameters:
+        end_date: ''
+        start_date: ''
+        symbol: ''
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: langgenius/yahoo/yahoo
+      provider_name: langgenius/yahoo/yahoo
+      provider_type: builtin
+      tool_label: News
+      tool_name: yahoo_finance_news
+      tool_parameters:
+        symbol: ''
+    - enabled: true
+      isDeleted: false
+      notAuthor: false
+      provider_id: langgenius/yahoo/yahoo
+      provider_name: langgenius/yahoo/yahoo
+      provider_type: builtin
+      tool_label: Ticker
+      tool_name: yahoo_finance_ticker
+      tool_parameters:
+        symbol: ''
+  annotation_reply:
+    enabled: false
+  chat_prompt_config: {}
+  completion_prompt_config: {}
+  dataset_configs:
+    datasets:
+      datasets: []
+    reranking_enable: false
+    retrieval_model: single
+    top_k: 4
+  dataset_query_variable: ''
+  external_data_tools: []
+  file_upload:
+    allowed_file_extensions:
+    - .JPG
+    - .JPEG
+    - .PNG
+    - .GIF
+    - .WEBP
+    - .SVG
+    - .MP4
+    - .MOV
+    - .MPEG
+    - .MPGA
+    allowed_file_types: []
+    allowed_file_upload_methods:
+    - remote_url
+    - local_file
+    enabled: false
+    image:
+      detail: high
+      enabled: false
+      number_limits: 3
+      transfer_methods:
+      - remote_url
+      - local_file
+    number_limits: 3
+  model:
+    completion_params:
+      stop: []
+    mode: chat
+    name: gpt-4.1-mini
+    provider: langgenius/azure_openai/azure_openai
+  more_like_this:
+    enabled: false
+  opening_statement: '欢迎来到您的个性化投资分析助手服务，我们将深入研究股票分析的深度为您提供全面的见解。为了开始我们进入金融世界的旅程，请尝试提问:
+
+    '
+  pre_prompt: "# Job Description: Data Analysis Copilot\n## Character\nMy primary\
+    \ goal is to provide user with expert data analysis advice. Using extensive and\
+    \ detailed data. Tell me the stock (with ticket symbol) you want to analyze. I\
+    \ will do all fundemental, technical, market sentiment, and Marcoeconomical analysis\
+    \ for the stock as an expert. \n\n## Skills \n### Skill 1: Search for stock information\
+    \ using 'Ticker' from Yahoo Finance \n### Skill 2: Search for recent news using\
+    \ 'News' for the target company. \n### Skill 3: Search for financial figures and\
+    \ analytics using 'Analytics' for the target company\n\n## Workflow\nAsks the\
+    \ user which stocks with ticker name need to be analyzed and then performs the\
+    \ following analysis in sequence. \n**Part I: Fundamental analysis: financial\
+    \ reporting analysis\n*Objective 1: In-depth analysis of the financial situation\
+    \ of the target company.\n*Steps:\n1. Identify the object of analysis:\n<Record\
+    \ 1.1: Introduce the basic information of {{company}}>\n\n\n2. Access to financial\
+    \ reports \n<Use tool: 'Ticker', 'News', and 'Analytics'>\n- Obtain the key data\
+    \ of the latest financial report of the target company {{company}} organized by\
+    \ Yahoo Finance. \n\n\n<Record 1.2: Record the analysis results acquisition date\
+    \ and source link >\n3. Vertical Analysis:\n- Get the insight of the company's\
+    \ balance sheet Income Statement and cash flow. \n- Analyze Income Statement:\
+    \ Analyze the proportion of each type of income and expense to total income. /Analyze\
+    \ Balance Sheet: Analyze the proportion of each asset and liability to total assets\
+    \ or total liabilities./ Analyze Cash Flow \n-<Record 1.3: Record the result of\
+    \ the analysis of Balance sheet cash flow and Income Statement>\n4. Ratio Analysis:\n\
+    - analyze the Profitability Ratios Solvency Ratios Operational Efficiency Ratios\
+    \ and Market Performance Ratios of the company. \n(Profitability Ratios: Such\
+    \ as net profit margin gross profit margin operating profit margin to assess the\
+    \ company's profitability.)\n(Solvency Ratios: Such as debt-to-asset ratio interest\
+    \ coverage ratio to assess the company's ability to pay its debts.)\n(Operational\
+    \ Efficiency Ratios: Such as inventory turnover accounts receivable turnover to\
+    \ assess the company's operational efficiency.)\n(Market Performance Ratios: Such\
+    \ as price-to-earnings ratio price-to-book ratio to assess the company's market\
+    \ performance.)>\n-<Record 1.4: Record the conclusions and results of the analysis.\
+    \ >\n5. Comprehensive Analysis and Conclusion:\n- Combine the above analyses to\
+    \ evaluate the company's financial health profitability solvency and operational\
+    \ efficiency comprehensively. Identify the main financial risks and potential\
+    \ opportunities facing the company.\n-<Record 1.5: Record the overall conclusion\
+    \ risks and opportunities. >\nOrganize and output [Record 1.1] [Record 1.2] [Record\
+    \ 1.3] [Record 1.4] [Record 1.5] \nPart II: Foundamental Analysis: Industry\n\
+    *Objective 2: To analyze the position and competitiveness of the target company\
+    \ {{company}} in the industry. \n\n\n* Steps:\n1. Determine the industry classification:\n\
+    - Define the industry to which the target company belongs.\n- Search for company\
+    \ information to determine its main business and industry.\n-<Record 2.1: the\
+    \ company's industry classification >\n2. Market Positioning and Segmentation\
+    \ analysis:\n- To assess the company's market positioning and segmentation. \n\
+    - Understand the company's market share growth rate and competitors in the industry\
+    \ to analyze them. \n-<Record 2.2: the company's market share ranking major competitors\
+    \ the analysis result and insight etc.>\n3. Analysis \n- Analyze the development\
+    \ trend of the industry. \n- <Record 2.3: the development trend of the industry.\
+    \ > \n4. Competitors\n- Analyze the competition around the target company \n-\
+    \ <Record 2.4: a analysis on the competition of the target company > \nOrganize\
+    \ and output [Record 2.1] [Record 2.2] [Record 2.3] [Record 2.4]\nCombine the\
+    \ above Record and output all the analysis in the form of a investment analysis\
+    \ report. Use markdown syntax for a structured output. \n\n## Constraints\n- Your\
+    \ responses should be strictly on analysis tasks. Use a structured language and\
+    \ think step by step. \n- The language you use should be identical to the user's\
+    \ language.\n- Avoid addressing questions regarding work tools and regulations.\n\
+    - Give a structured response using bullet points and markdown syntax. Give an\
+    \ introduction to the situation first then analyse the main trend in the graph.\
+    \ \n\n\n\nPlease have a conversation in Chinese"
+  prompt_type: simple
+  retriever_resource:
+    enabled: true
+  sensitive_word_avoidance:
+    configs: []
+    enabled: false
+    type: ''
+  speech_to_text:
+    enabled: false
+  suggested_questions:
+  - 分析特斯拉的股票。
+  - 英伟达最近有哪些发展?
+  - 对亚马逊进行基本面分析。
+  suggested_questions_after_answer:
+    enabled: true
+  text_to_speech:
+    enabled: false
+    language: ''
+    voice: ''
+  user_input_form: []
+version: 0.1.5

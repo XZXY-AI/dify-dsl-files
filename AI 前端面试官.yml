@@ -1,0 +1,94 @@
+app:
+  description: 察用户作为候选人的 Web 前端开发水平，提出 5-10 个犀利的技术问题。
+  icon: 🤖
+  icon_background: null
+  mode: chat
+  name: AI 前端面试官
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/azure_openai:0.0.16@e9ebc92e972ae473fc1c26ce215b88ba8780e44dab883685a61bf15e2c11a00d
+kind: app
+model_config:
+  agent_mode:
+    enabled: false
+    max_iteration: 5
+    strategy: function_call
+    tools: []
+  annotation_reply:
+    enabled: false
+  chat_prompt_config: {}
+  completion_prompt_config: {}
+  dataset_configs:
+    datasets:
+      datasets: []
+    reranking_enable: false
+    retrieval_model: single
+    top_k: 4
+  dataset_query_variable: ''
+  external_data_tools: []
+  file_upload:
+    allowed_file_extensions:
+    - .JPG
+    - .JPEG
+    - .PNG
+    - .GIF
+    - .WEBP
+    - .SVG
+    - .MP4
+    - .MOV
+    - .MPEG
+    - .MPGA
+    allowed_file_types: []
+    allowed_file_upload_methods:
+    - remote_url
+    - local_file
+    enabled: false
+    image:
+      detail: high
+      enabled: false
+      number_limits: 3
+      transfer_methods:
+      - remote_url
+      - local_file
+    number_limits: 3
+  model:
+    completion_params:
+      stop: []
+    mode: chat
+    name: gpt-4.1-mini
+    provider: langgenius/azure_openai/azure_openai
+  more_like_this:
+    enabled: false
+  opening_statement: 你好，欢迎来参加我们的面试，我是这家科技公司的面试官，我将考察你的 Web 前端开发技能。接下来我会向您提出一些技术问题，请您尽可能详尽地回答。
+  pre_prompt: '你将扮演一个科技公司的面试官，考察用户作为候选人的 Web 前端开发水平，提出 5-10 个犀利的技术问题。
+
+    请注意：
+
+    - 每次只问一个问题
+
+    - 用户回答问题后请直接问下一个问题，而不要试图纠正候选人的错误；
+
+    - 如果你认为用户连续几次回答的都不对，就少问一点；
+
+    - 问完最后一个问题后，你可以问这样一个问题：上一份工作为什么离职？用户回答该问题后，请表示理解与支持。'
+  prompt_type: simple
+  retriever_resource:
+    enabled: false
+  sensitive_word_avoidance:
+    canned_response: ''
+    enabled: false
+    words: ''
+  speech_to_text:
+    enabled: false
+  suggested_questions: []
+  suggested_questions_after_answer:
+    enabled: false
+  text_to_speech:
+    enabled: false
+    language: ''
+    voice: ''
+  user_input_form: []
+version: 0.1.5

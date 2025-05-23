@@ -1,5 +1,5 @@
 app:
-  description: 标题党创作
+  description: 输入你要描述的内容，为您生成爆款标题
   icon: face_vomiting
   icon_background: '#FFEAD5'
   mode: workflow
@@ -166,7 +166,7 @@ workflow:
 
 
             - 其他描述：{{#1719024828554.description#}}'
-        selected: true
+        selected: false
         title: 爆款标题创作
         type: llm
         variables: []
@@ -180,7 +180,7 @@ workflow:
       positionAbsolute:
         x: 334
         y: 258
-      selected: true
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -195,7 +195,7 @@ workflow:
           result:
             children: null
             type: array[string]
-        selected: false
+        selected: true
         title: 代码执行
         type: code
         variables:
@@ -211,7 +211,7 @@ workflow:
       positionAbsolute:
         x: 638
         y: 258
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -240,6 +240,6 @@ workflow:
       type: custom
       width: 244
     viewport:
-      x: 153
-      y: 102
-      zoom: 0.7
+      x: -304.8166862078324
+      y: 149.40710426214957
+      zoom: 0.7058467184262166
