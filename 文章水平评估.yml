@@ -58,7 +58,7 @@ model_config:
     completion_params:
       stop: []
     mode: chat
-    name: gpt-4.1-mini
+    name: gpt-41-mini
     provider: langgenius/azure_openai/azure_openai
   more_like_this:
     enabled: false

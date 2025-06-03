@@ -159,7 +159,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: ecf9052c-dbb4-44db-be2f-7a55d70f00c6
@@ -307,6 +307,6 @@ workflow:
       type: custom
       width: 244
     viewport:
-      x: 523.9434737706208
-      y: -88.79074461452171
+      x: 302.9434737706208
+      y: -19.790744614521657
       zoom: 1.2308261317430527

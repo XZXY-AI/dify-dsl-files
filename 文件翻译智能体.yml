@@ -318,7 +318,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 28742294-85bb-4612-8e4e-6e590bb48c99
@@ -346,7 +346,7 @@ workflow:
         - id: 90c836a7-2dd0-4221-99b5-220ee47395fd
           role: user
           text: '{{#1727235420145.text#}}'
-        selected: false
+        selected: true
         title: LLM Translate
         type: llm
         variables: []
@@ -360,7 +360,7 @@ workflow:
       positionAbsolute:
         x: 1550
         y: 286.5
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -393,7 +393,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 28742294-85bb-4612-8e4e-6e590bb48c99
@@ -491,7 +491,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 1746f3a9-608a-462f-9532-34c71c38c8bb
@@ -601,6 +601,6 @@ workflow:
       type: custom
       width: 244
     viewport:
-      x: -785.4088449406636
-      y: 166.48163876463715
+      x: 195.59115505933642
+      y: 222.48163876463715
       zoom: 0.6586913450174415

@@ -155,7 +155,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 26856bc1-5e1d-47f6-acf6-850b97eedb16
@@ -224,7 +224,7 @@ workflow:
             ......
 
             标签 1 #标签 2 #标签 3......'
-        selected: false
+        selected: true
         title: LLM
         type: llm
         variables: []
@@ -238,7 +238,7 @@ workflow:
       positionAbsolute:
         x: 687
         y: 282
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -286,12 +286,12 @@ workflow:
       positionAbsolute:
         x: 87.21932997780517
         y: 405.92556286457216
-      selected: true
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom-note
       width: 359
     viewport:
-      x: -121.09814752968975
-      y: -544.1904261461262
+      x: -629.0981475296899
+      y: 34.80957385387376
       zoom: 1.7107187517209625

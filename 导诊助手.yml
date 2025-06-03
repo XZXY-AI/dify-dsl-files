@@ -646,7 +646,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: c965154a-3942-4f1d-98fb-7e34c97b15b6
@@ -774,7 +774,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 5507a45e-b1cf-4610-b138-a14cb5d9deb1
@@ -920,7 +920,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: f3aade03-5e59-471d-b0d1-829cd028640f
@@ -1046,7 +1046,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 55c0f28c-2936-4300-84e3-99858864c55a
@@ -1113,7 +1113,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 54f1c126-769c-4dda-88a9-5f54419caefc
@@ -1183,7 +1183,7 @@ workflow:
           - text
         - - '1722955862857'
           - text
-      height: 153
+      height: 152
       id: '1722955082746'
       position:
         x: 3982
@@ -1330,7 +1330,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 4442d59d-2682-4411-ac75-e3f550fa0135
@@ -1368,10 +1368,10 @@ workflow:
       id: '1722955850138'
       position:
         x: 3070
-        y: 860
+        y: 857
       positionAbsolute:
         x: 3070
-        y: 860
+        y: 857
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -1412,7 +1412,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: ccd17f08-f41e-414f-be3a-60bc5939ab78
@@ -1479,7 +1479,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 5507a45e-b1cf-4610-b138-a14cb5d9deb1
@@ -1558,7 +1558,7 @@ workflow:
             性别：{{#conversation.gender#}}
 
             症状：{{#conversation.symptom#}}'
-        selected: false
+        selected: true
         title: 'Recommend department '
         type: llm
         variables: []
@@ -1577,7 +1577,7 @@ workflow:
       positionAbsolute:
         x: 4590
         y: 857
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -1725,7 +1725,7 @@ workflow:
           completion_params:
             temperature: 0.7
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         parameters:
         - description: 'Patient''s age '
@@ -1875,7 +1875,7 @@ workflow:
         variables:
         - - '1722957436489'
           - symptom
-      height: 109
+      height: 108
       id: '1722959274773'
       position:
         x: 2464.857142857143
@@ -1940,6 +1940,6 @@ workflow:
       type: custom
       width: 244
     viewport:
-      x: -881.0143892890496
-      y: 139.38092066630446
-      zoom: 0.6747891872846816
+      x: -4849.3757306721
+      y: -473.4927168044903
+      zoom: 1.3302057079312197

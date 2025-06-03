@@ -309,7 +309,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 994d57b8-32bc-45cd-b30a-4a1481553627
@@ -571,7 +571,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: fef27062-3a9f-4d92-8a59-0902e9c80e87
@@ -614,7 +614,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: fef27062-3a9f-4d92-8a59-0902e9c80e87
@@ -655,7 +655,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: fef27062-3a9f-4d92-8a59-0902e9c80e87
@@ -695,7 +695,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: fef27062-3a9f-4d92-8a59-0902e9c80e87
@@ -735,7 +735,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: fef27062-3a9f-4d92-8a59-0902e9c80e87
@@ -756,10 +756,10 @@ workflow:
       id: '17301924991430'
       position:
         x: 1209.0000000000002
-        y: 783.9999999999998
+        y: 786.6099935218774
       positionAbsolute:
         x: 1209.0000000000002
-        y: 783.9999999999998
+        y: 786.6099935218774
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -775,7 +775,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: fef27062-3a9f-4d92-8a59-0902e9c80e87
@@ -891,13 +891,13 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: fef27062-3a9f-4d92-8a59-0902e9c80e87
           role: system
           text: 请提取这张照片的内容，其中内容格式‘发票代码’、'发票号码’、'单位’、'车号’、'工号’、'日期’、'时间’、'单价’、'里程’、'等候’、'金额’等字段返回信息，返回的结果信息以json格式返回
-        selected: false
+        selected: true
         title: 出租车发票
         type: llm
         variables: []
@@ -912,16 +912,16 @@ workflow:
       id: '17306982748800'
       position:
         x: 1209.0000000000002
-        y: 1083.5617314828105
+        y: 1084.8667282437493
       positionAbsolute:
         x: 1209.0000000000002
-        y: 1083.5617314828105
+        y: 1084.8667282437493
       selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 244
     viewport:
-      x: 140.7410161591929
-      y: -20.55607741601284
+      x: 191.74101615919335
+      y: -16.55607741601284
       zoom: 0.7662854268547077

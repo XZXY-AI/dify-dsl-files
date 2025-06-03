@@ -133,7 +133,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 93959ec1-6e64-430b-b6ad-eb1c36d4de77
@@ -166,7 +166,7 @@ workflow:
 
 
             - 其他描述：{{#1719024828554.description#}}'
-        selected: false
+        selected: true
         title: 爆款标题创作
         type: llm
         variables: []
@@ -180,7 +180,7 @@ workflow:
       positionAbsolute:
         x: 334
         y: 258
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -195,7 +195,7 @@ workflow:
           result:
             children: null
             type: array[string]
-        selected: true
+        selected: false
         title: 代码执行
         type: code
         variables:
@@ -211,7 +211,7 @@ workflow:
       positionAbsolute:
         x: 638
         y: 258
-      selected: true
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -240,6 +240,6 @@ workflow:
       type: custom
       width: 244
     viewport:
-      x: -304.8166862078324
-      y: 149.40710426214957
+      x: 352.1833137921676
+      y: 150.40710426214957
       zoom: 0.7058467184262166

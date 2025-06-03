@@ -398,7 +398,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: ca6031a3-0909-4859-b988-b47c4859ce35
@@ -652,7 +652,7 @@ workflow:
           completion_params:
             temperature: 0.7
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         query_variable_selector:
         - '1724912630775'
@@ -669,7 +669,7 @@ workflow:
       positionAbsolute:
         x: 498.1956798202368
         y: 663.4719421926416
-      selected: true
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -758,7 +758,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 616ccbd7-4f04-49da-8adf-eaed123ee334
@@ -780,10 +780,10 @@ workflow:
       id: '17249166812450'
       position:
         x: 1101.0596284996334
-        y: 898.5407239797723
+        y: 897.7530076042008
       positionAbsolute:
         x: 1101.0596284996334
-        y: 898.5407239797723
+        y: 897.7530076042008
       selected: false
       sourcePosition: right
       targetPosition: left
@@ -805,7 +805,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 371c1c7d-509b-4c3d-b789-d81faabbec35
@@ -850,7 +850,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 371c1c7d-509b-4c3d-b789-d81faabbec35
@@ -899,7 +899,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 8bd3e708-4cd1-437a-b0ff-6571f1dce6a5
@@ -952,7 +952,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 8bd3e708-4cd1-437a-b0ff-6571f1dce6a5
@@ -1135,7 +1135,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 616ccbd7-4f04-49da-8adf-eaed123ee334
@@ -1144,7 +1144,7 @@ workflow:
 
 
             你是一个问答机器人, 用来回答问题的. 但是, 我们先向上一步, 问问他意愿之前的最初动机是什么? 如果有了, 那么请你试试和他用非技术的方案解决'
-        selected: false
+        selected: true
         title: 鉴别真正的问题 (1)
         type: llm
         variables: []
@@ -1161,12 +1161,12 @@ workflow:
       positionAbsolute:
         x: 1101.0596284996334
         y: 1476.6238934773307
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
       width: 244
     viewport:
-      x: -511.8919710178411
-      y: -283.03730872881806
-      zoom: 0.6269211703340004
+      x: -714.885250078426
+      y: -173.2480010757845
+      zoom: 1.269492460753161

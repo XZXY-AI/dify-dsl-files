@@ -179,7 +179,7 @@ workflow:
         model:
           completion_params: {}
           mode: chat
-          name: gpt-4.1-mini
+          name: gpt-41-mini
           provider: langgenius/azure_openai/azure_openai
         prompt_template:
         - id: 039d27b2-bf6b-45a8-ac05-3233376ce027
@@ -207,7 +207,7 @@ workflow:
       positionAbsolute:
         x: 688
         y: 282
-      selected: true
+      selected: false
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -219,7 +219,7 @@ workflow:
           - '1744952319644'
           - text
           variable: htsc
-        selected: false
+        selected: true
         title: 结束
         type: end
       height: 90
@@ -230,7 +230,7 @@ workflow:
       positionAbsolute:
         x: 992
         y: 282
-      selected: false
+      selected: true
       sourcePosition: right
       targetPosition: left
       type: custom
@@ -280,6 +280,6 @@ workflow:
       type: custom
       width: 244
     viewport:
-      x: -521.7933275118835
-      y: 78.8299658021671
+      x: 83.20667248811651
+      y: 53.82996580216707
       zoom: 0.8705505632961251
